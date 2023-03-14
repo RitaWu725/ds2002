@@ -1,1 +1,4 @@
-
+00-run sakila
+01-run sakila_dw1
+02-run dim_date
+03-run midterm
