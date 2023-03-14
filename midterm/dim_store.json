@@ -1,0 +1,13 @@
+ MySQL  localhost:33060+ ssl  sakila_dw1  JS > session.sql("select * from sakila_dw1.dim_store")
+{
+    "store_key": 1,
+    "manager_staff_id": 1,
+    "address_id": 1,
+    "last_update": "2006-02-15 04:57:12"
+}
+{
+    "store_key": 2,
+    "manager_staff_id": 2,
+    "address_id": 2,
+    "last_update": "2006-02-15 04:57:12"
+}
