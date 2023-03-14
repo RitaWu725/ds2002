@@ -1,0 +1,30 @@
+Instructions for Running Rita Wu’s Midterm Project DS2002
+Rita Wu
+nzw2zt@@virginia.edu
+03/14/2023
+
+The Sakila DB is a transactional database for a film and theater rental.
+More information for Sakila DB can be found on the dataset homepage: https://dev.mysql.com/doc/sakila/en/ 
+
+Repository Contents:
+a. Sakila-schema.sql & Sakila-data.sql : document that contains original sakila database
+b. 01-mysqlsampledatabase: SQL source code for sample “sakila_dw1” database.
+c. 02-dim_date: Contains SQL code for creating the date dimension table.
+d. 03-JSON files: created JSON files that contains data in dimension tables.
+e. 04- ds2002_RitaWu_midterm: Python notebook with ETL process for sakila data.
+
+STEPS TO RUN:
+Import the original data
+Run SQL Query in MYSQL: sakila_schema.sql
+>>>creates sakila source database in MySQL.
+
+Run SQL Query in MYSQL: sakila-data.sql
+>>>inserts data into sakila source database in MySQL.
+Get the dim_tables in the created dataset.
+Run SQL Query in MYSQL: mysamplesql.sql
+>>>insert dim_staff, dim_customer, dim_rental, dim_staff data into sakila_dw1 which we will use later.
+Run SQL Query in MYSQL: Dim_Date.sql
+>>>insert dim_date table into sakila_dw1 which we will use later.
+Extract data from different sources and merge them in python 
+Run Python Script in JUPITERNB: ds2002_RitaWu_midterm.ipynb
+#Important: Keep the notebook, the data folder, and dim_staff.json, and dim_store.json IN THE SAME FOLDER AS THEY ARE IN ON GITHUB#
