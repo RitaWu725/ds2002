@@ -42,6 +42,9 @@ Hot path data
 Data visualization
   I choose to visualize the relationship between average rental duration and the weekdays the deal is on, and group it by the staff selling the theater. It aims to show which day is the luck day for film rental (that has the longest rental duration, which usually means more revenue.) And which staff has a better selling performance.
   the result is surprising: the deals on Tuesdays has significantly higer rental duration, and Hillyer has a better selling performance on most of the days.
+  
+  
+ 
 # Support theories
   Relational Database Management Systems (e.g., MySQL, Microsoft SQL Server, Oracle, IBM DB2)
   Online Transaction Processing Systems (OLTP): Optimized for High-Volume Write Operations; Normalized to 3rd Normal Form.
