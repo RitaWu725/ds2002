@@ -1,1 +1,5 @@
 files needed to produce sakila_dw1
+run sakila-schema and sakila-data first
+run mysamplesql to create sakila_dw1
+run lab02-c to add dim_date to sakila_dw1
+run midterm to create fact_orders table
