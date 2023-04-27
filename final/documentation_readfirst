@@ -34,7 +34,7 @@ Cold path data
   read in customer dimension from CSV file
   *fact_orders table already merged rental dimension with staff, store, and inventory
 Hot path data
-  proceed fact_orders data using databricks spark
+  proceed fact_orders (fact_orders01, fact_orders02, fact_orders_03) data using databricks spark
   load in raw data and create bronze table
   include reference data and merge them in silver table
   join "rental data, store data, date data" with the fact_orders table
