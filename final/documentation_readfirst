@@ -1,0 +1,53 @@
+Final_Project: Data Lakehouse with Structured Streaming_documentation
+Rita Wu nzw2tzt
+
+Overview:
+This file is a databricks experiment that using the ETL process to deal with Sakila database. I will show how to read in files from different sources and transform it into a fact_order database that combines all needed information.
+The method includes: read files from Mysql Azure, mongoDB, JSON, CSV; using data intergration patterns to clean the data and select the most valuable dataset that are meaningful to the users.
+
+!!!!!
+If you want to see the final result only, just open the "ds2002_final_RitaWu.ipynb" file
+the other files are use to replicate the whole process only.
+!!!!!
+
+Dimension tables:
+Dim_date: an additional date database showing the time/day/week the rental deals happens
+Dim_rental: all the information related to the film theater rental.
+Dim_store: where the rental deals take place
+Dim_staff: who process the rental deals
+Dim_inventory: transaction database
+Dim_customer: the data of customers who go to the theater to watch the films
+Dim_film: the films showing in each film theater
+
+
+Procedure:
+pre step = re-run sakila data in new Mysql Azure database
+  re-run midterm code "my sample sql" to produce dim store, dim staff, dim customer, dim inventory and export them to JSON files
+  re-run midterm code.ipynb to create fact_orders table
+Cold path data
+  read in date dimension from Mysql Azure
+  read in rental dimension from Mysql Azure
+  read in staff dimension from MongoDB (JSON)
+  read in store dimension from MongoDB (JSON)
+  read in inventory dimension from CSV file
+  read in film dimension from CSV file
+  read in customer dimension from CSV file
+  *fact_orders table already merged rental dimension with staff, store, and inventory
+Hot path data
+  proceed fact_orders data using databricks spark
+  load in raw data and create bronze table
+  include reference data and merge them in silver table
+  join "rental data, store data, date data" with the fact_orders table
+  selected need data in gold table
+Data visualization
+  I choose to visualize the relationship between average rental duration and the weekdays the deal is on, and group it by the staff selling the theater. It aims to show which day is the luck day for film rental (that has the longest rental duration, which usually means more revenue.) And which staff has a better selling performance.
+  the result is surprising: the deals on Tuesdays has significantly higer rental duration, and Hillyer has a better selling performance on most of the days.
+# Support theories
+  Relational Database Management Systems (e.g., MySQL, Microsoft SQL Server, Oracle, IBM DB2)
+  Online Transaction Processing Systems (OLTP): Optimized for High-Volume Write Operations; Normalized to 3rd Normal Form.
+  Online Analytical Processing Systems (OLAP): Optimized for Read/Aggregation Operations; Dimensional Model (i.e, Star Schema)
+  NoSQL (Not Only SQL) Systems (e.g., MongoDB, CosmosDB, Cassandra, HBase, Redis)
+  File System (Data Lake) Source Systems (e.g., AWS S3, Microsoft Azure Data Lake Storage)
+  Various Datafile Formats (e.g., JSON, CSV, Parquet, Text, Binary)
+  Massively Parallel Processing (MPP) Data Integration Systems (e.g., Apache Spark, Databricks)
+  Data Integration Patterns (e.g., Extract-Transform-Load, Extract-Load-Transform, Extract-Load-Transform-Load, Lambda & Kappa Architectures)
